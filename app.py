@@ -14,3 +14,18 @@ if st.button("Extract Keywords"):
     keywords = extract_keywords(text)
     st.subheader("Keywords")
     st.write(keywords)
+
+from youtube_summary import summarize_youtube_video
+
+st.header("YouTube Video Summarizer")
+
+yt_url = st.text_input("Enter YouTube URL:")
+
+if st.button("Summarize YouTube Video"):
+    summary, keywords = summarize_youtube_video(yt_url)
+
+    st.subheader("Video Summary")
+    st.write(summary)
+
+    st.subheader("Key Concepts")
+    st.write(keywords)
